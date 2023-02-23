@@ -12,3 +12,13 @@
   display: flex;
   justify-content: center;
 }
+
+.resetBtn {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pointer {
+  cursor: pointer;
+}

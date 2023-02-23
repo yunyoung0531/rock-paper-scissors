@@ -1,7 +1,7 @@
 import {useState} from "react"
 import './App.css';
 import Box from "./component/Box"
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 //1.박스 두 개 (타이틀, 사진 정보, 결과 값)
 //2.가위바위보 버튼
@@ -51,10 +51,10 @@ function App() {
     // user == paper, computer == rock -> user win
     // user ==paper, computer == scissors -> user lose
 
-    if (user.name == computer.name) return "tie"
-    else if (user.name == "Rock") return computer.name == "Scissors" ? "win" : "lose"
-    else if (user.name == "Scissors") return computer.name == "Paper" ? "win" : "lose"
-    else if (user.name == "Paper") return computer.name == "Rock" ? "win" : "lose"
+    if (user.name == computer.name) return "TIE"
+    else if (user.name == "Rock") return computer.name == "Scissors" ? "WIN" : "LOSE"
+    else if (user.name == "Scissors") return computer.name == "Paper" ? "WIN" : "LOSE"
+    else if (user.name == "Paper") return computer.name == "Rock" ? "WIN" : "LOSE"
     // user.name == "Rock" && computer.name == "Scissors" ? "win" : "lose"
     // user.name == "Scissors" && computer.name == "Paper" ? "win" : "lose"
     // user.name == "Paper" && computer.name == "Rock" ? "win" : "lose"
@@ -76,11 +76,20 @@ function App() {
         <Box title="you" item={userSelect} result={result}/>
         <Box title="computer" item={computerSelect} result={result}/>
       </div>
-      <div className="main">
+      <div className="main pointer">
         {/* 콜백함수 형태로 넣기! */}
-        <button onClick={() => play("scissors")}>가위</button> 
+        {/* <button onClick={() => play("scissors")}>가위</button> 
         <button onClick={() => play("rock")}>바위</button>
-        <button onClick={() => play("paper")}>보</button> 
+        <button onClick={() => play("paper")}>보</button>  */}
+                
+        <i class="fa fa-hand-rock fa-2x" onClick={() => play("rock")}></i>
+        <i class="fa fa-hand-scissors fa-2x"
+          onClick={() => play("scissors")}></i>
+        <i class="fa fa-hand-paper fa-2x" onClick={() => play("paper")}></i>
+      </div>
+      <div className="resetBtn">
+      <button type="button" class="btn btn-outline-secondary" 
+      onClick={()=>window.location.replace("/main")}>reset</button>
       </div>
     </div>
   );
