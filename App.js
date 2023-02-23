@@ -51,10 +51,10 @@ function App() {
     // user == paper, computer == rock -> user win
     // user ==paper, computer == scissors -> user lose
 
-    if (user.name == computer.name) return "TIE"
-    else if (user.name == "Rock") return computer.name == "Scissors" ? "WIN" : "LOSE"
-    else if (user.name == "Scissors") return computer.name == "Paper" ? "WIN" : "LOSE"
-    else if (user.name == "Paper") return computer.name == "Rock" ? "WIN" : "LOSE"
+    if (user.name == computer.name) return "tie"
+    else if (user.name == "Rock") return computer.name == "Scissors" ? "win" : "lose"
+    else if (user.name == "Scissors") return computer.name == "Paper" ? "win" : "lose"
+    else if (user.name == "Paper") return computer.name == "Rock" ? "win" : "lose"
     // user.name == "Rock" && computer.name == "Scissors" ? "win" : "lose"
     // user.name == "Scissors" && computer.name == "Paper" ? "win" : "lose"
     // user.name == "Paper" && computer.name == "Rock" ? "win" : "lose"
